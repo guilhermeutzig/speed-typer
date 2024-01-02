@@ -1,0 +1,22 @@
+---
+import Main from "@/layouts/Main.astro";
+import Button from "@/components/Button";
+---
+
+<Main title="Welcome to Astro.">
+	<main>
+		<h1>Welcome to Speed Typer</h1>
+		<Button client:load />
+	</main>
+</Main>
+
+<style>
+	main {
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		height: 100vh;
+	}
+</style>
