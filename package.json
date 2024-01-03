@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
-    "@astrojs/node": "^7.0.4",
     "@astrojs/solid-js": "^3.0.3",
+    "@astrojs/vercel": "^6.1.2",
     "astro": "^4.0.9",
     "firebase": "^10.7.1",
     "firebase-admin": "^12.0.0",
