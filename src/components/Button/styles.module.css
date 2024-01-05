@@ -1,0 +1,11 @@
+.button {
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "GalacticaGrid";
+  color: white;
+  background-color: #61370e;
+  font-size: 32px;
+  height: 80px;
+  width: 320px;
+}

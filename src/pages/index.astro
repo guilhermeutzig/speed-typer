@@ -17,8 +17,10 @@ const user: UserRecord | undefined = fetchedUser || undefined;
 			<img src={user.photoURL} />
 			<p>{user.displayName}</p>
 		)}
-		<h1>Welcome to Speed Typer!!</h1>
-		<Button client:load />
+		<h1 class="outlined">Welcome to
+			<span>Speed Typer</span>
+		</h1>
+		<Button client:load >START GAME</Button>
 	</main>
 </Main>
 
@@ -30,5 +32,16 @@ const user: UserRecord | undefined = fetchedUser || undefined;
 		justify-content: center;
 		flex-direction: column;
 		height: 100vh;
+	}
+
+	h1 {
+		font-size: 32px;
+		line-height: 1.2;
+		text-align: center;
+	}
+
+	h1 span {
+		display: block;
+		font-size: 106px;
 	}
 </style>
