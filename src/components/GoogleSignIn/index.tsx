@@ -1,5 +1,6 @@
-import { app, firebaseConfig } from "@/lib/firebase/client";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { app } from "@/lib/firebase/client";
+import styles from "./styles.module.css";
 
 const auth = getAuth(app);
 
@@ -25,15 +26,10 @@ const googleSignIn = async () => {
   }
 };
 
-const AuthContainer = () => {
-  return (
-    <form>
-      <h1>Google Login</h1>
-      <button type="button" onClick={googleSignIn}>
-        Google Sign In
-      </button>
-    </form>
-  );
-};
+const GoogleSignIn = () => (
+  <button class={styles.button} onClick={googleSignIn}>
+    {/* Sign in with Google */}
+  </button>
+);
 
-export default AuthContainer;
+export default GoogleSignIn;

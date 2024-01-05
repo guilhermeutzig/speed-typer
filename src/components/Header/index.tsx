@@ -1,24 +1,25 @@
+import { Show } from "solid-js";
 import styles from "./styles.module.css";
+import { signOut } from "./utils";
+import type { UserRecord } from "firebase-admin/auth";
+import GoogleSignIn from "../GoogleSignIn";
 
-const signOut = async () => {
-  const res = await fetch("/api/auth/logout");
-
-  if (!res.ok) {
-    const data = await res.json();
-    return data;
-  }
-
-  if (res.redirected) {
-    window.location.assign(res.url);
-  }
+type Props = {
+  user?: UserRecord;
 };
 
-const Header = () => {
+const Header = ({ user }: Props) => {
   return (
     <header class={styles.header}>
-      <button type="button" onClick={signOut}>
-        Sign out
-      </button>
+      <Show when={user}>
+        <button type="button" onClick={signOut}>
+          Sign out
+        </button>
+      </Show>
+
+      <Show when={!user}>
+        <GoogleSignIn />
+      </Show>
     </header>
   );
 };
